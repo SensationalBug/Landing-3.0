@@ -1,38 +1,207 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+header {
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
+
+  padding: 48px;
+  height: auto;
+  width: 100%;
+}
+
+.icono {
+  animation: moverDer 1s ease-in;
+  justify-content: center;
+  z-index: 1;
+}
+
+.uno {
+  -webkit-clip-path: circle(0% at 100% 0);
+  clip-path: circle(0% at 100% 0);
+}
+
+.dos {
+  -webkit-clip-path: circle(150% at 100% 0);
+  clip-path: circle(150% at 100% 0);
+}
+
+.enlaces {
+  position: fixed;
+  display: flex;
+  top: 0;
+  background: #000;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  transition: all 1s ease;
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+img {
+  display: block;
+  height: 400px;
+  object-fit: cover;
+  width: auto;
+}
+
+.img {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: moverArr 1s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.img a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.textos {
+  width: 50%;
+  color: #fff;
+}
+
+.textos h1 {
+  font-size: 80px;
+  color: #fff;
+  animation: moverIzq 1s ease;
+}
+
+.textos h2 {
+  font-size: 30px;
+  animation: moverDer 1s ease;
+}
+
+.wave {
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
+  height: 100px;
+  width: 100%;
+}
+
+@keyframes moverIzq {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moverDer {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moverArr {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moverAba {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  img {
+    height: 300px;
+  }
+  .textos h1 {
+    font-size: 50px;
+  }
+  .textos h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  img {
+    height: 200px;
+  }
+  .textos h1 {
+    font-size: 40px;
+  }
+  .textos h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .textos {
+    width: 100%;
+    text-align: center;
+  }
+  .img a {
+    display: none;
   }
 }
