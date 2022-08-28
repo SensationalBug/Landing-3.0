@@ -1,0 +1,48 @@
+@media screen and (max-width: 800px) {
+  .FaGithub {
+    color: #691c52;
+  }
+  .FaCode {
+    color: #33b4f0;
+  }
+  .IoLogoFirebase {
+    color: #ffca28;
+  }
+  .FaWhatsapp {
+    color: #128c7e;
+  }
+  .FaMailBulk {
+    color: #e75a4d;
+  }
+  .IoDocumentAttachOutline {
+    color: #edd9bc;
+  }
+}
+
+.FaGithub,
+.FaCode,
+.IoLogoFirebase,
+.FaWhatsapp,
+.FaMailBulk,
+.IoDocumentAttachOutline {
+  transition: 0.5s;
+}
+
+.FaGithub:hover {
+  color: #602c50;
+}
+.FaCode:hover {
+  color: #33b4f0;
+}
+.IoLogoFirebase:hover {
+  color: #ffca28;
+}
+.FaWhatsapp:hover {
+  color: #128c7e;
+}
+.FaMailBulk:hover {
+  color: #e75a4d;
+}
+.IoDocumentAttachOutline:hover {
+  color: #edd9bc;
+}

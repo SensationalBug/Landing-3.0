@@ -1,66 +1,78 @@
 import "./App.css";
-import img from "./images/web.png";
-import { useRef, useState } from "react";
+import React from "react";
+import web1 from "./images/web1.png";
+import web2 from "./images/web2.png";
+import web3 from "./images/web3.png";
+import web4 from "./images/web4.png";
+import web5 from "./images/web5.png";
+import "./components/buttonsHover.css";
+import Buttons from "./components/Buttons";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FaWhatsapp, FaGithub, FaCode, FaMailBulk } from "react-icons/fa";
+import { IoDocumentAttachOutline, IoLogoFirebase } from "react-icons/io5";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function App() {
-  const [count, setCount] = useState(false);
-  const icono = useRef();
-  const enlaces = useRef();
-
-  const openMenu = () => {
-    if (!count) {
-      enlaces.current.className = "enlaces dos";
-      setCount(true);
-    } else {
-      enlaces.current.className = "enlaces uno";
-      setCount(false);
-    }
-    console.log(enlaces.current.classList);
-  };
-
   return (
     <div className="App">
-      <header>
-        <nav>
-          <button
-            onClick={() => openMenu()}
-            className="btn btn-outline-light icono"
-            ref={icono}
+      <div className="contenedor">
+        <div className="imgContainer">
+          <Carousel
+            autoPlay={true}
+            interval={3000}
+            centerMode={true}
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            className="imgCol"
+            infiniteLoop={true}
+            dynamicHeight={true}
+            showIndicators={false}
+            centerSlidePercentage={100}
           >
-            Menú
-          </button>
-          <div className="enlaces uno" ref={enlaces}>
-            <button className="btn btn-outline-light">Inicio</button>
-            <button className="btn btn-outline-light">Acerca de</button>
-          </div>
-        </nav>
-        <div className="container">
-          <div className="textos">
+            <img src={web1} alt="..." className="img" />
+            <img src={web2} alt="..." className="img" />
+            <img src={web3} alt="..." className="img" />
+            <img src={web4} alt="..." className="img" />
+            <img src={web5} alt="..." className="img" />
+          </Carousel>
+        </div>
+        <div className="textos">
+          <div className="textosContainer">
             <h1>SensationalBug</h1>
             <h2>Hacemos la web perfecta para ti.</h2>
-            <button className="btn btn-outline-light">Contacto</button>
           </div>
-          <div className="img">
-            <img src={img} alt="..." />
-            <a target="new_blank" href="http://www.freepik.com">
-              Designed by upklyak / Freepik
-            </a>
+          <div className="btnContainer">
+            <Buttons
+              clase={"button proyects"}
+              title={"Proyectos"}
+              icon1={<FaGithub size="2em" className="FaGithub" />}
+              href1={"https://github.com/SensationalBug"}
+              icon2={<FaCode size="2em" className="FaCode" />}
+              href2={"https://ultraweb2-b7141.web.app/"}
+              icon3={<IoLogoFirebase size="2em" className="IoLogoFirebase" />}
+              href3={"https://presentacion-7631c.web.app/"}
+            />
+            <Buttons
+              clase={"button contact"}
+              title={"Contacto y CV"}
+              icon1={<FaWhatsapp size="2em" className="FaWhatsapp" />}
+              href1={"https://wa.me/+18092526353"}
+              icon2={<FaMailBulk size="2em" className="FaMailBulk" />}
+              href2={"https://presentacion-7631c.web.app/"}
+              icon3={
+                <IoDocumentAttachOutline
+                  size="2em"
+                  className="IoDocumentAttachOutline"
+                />
+              }
+              href3={
+                "https://firebasestorage.googleapis.com/v0/b/aboutme2-849fe.appspot.com/o/CV2022.pdf?alt=media&token=9964714d-16dc-4af1-a9df-f555aa74700d"
+              }
+            />
           </div>
-        </div>
-      </header>
-      <div className="wave">
-        <div style={{ height: "150px", overflow: "hidden" }}>
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            style={{ height: "100%", width: "100%" }}
-          >
-            <path
-              d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-              style={{ stroke: "none", fill: "#fff" }}
-            ></path>
-          </svg>
         </div>
       </div>
     </div>

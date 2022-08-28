@@ -1,0 +1,43 @@
+.cardButton {
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.titleButton {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+.titleButton,
+.listContainer {
+  color: #ffffff;
+  background: #474747;
+  border-radius: 10px;
+}
+.listContainer {
+  opacity: 0;
+  font-size: 20px;
+  list-style: none;
+  transition: all 1s ease-in-out;
+}
+.list {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list a {
+  color: #fff;
+}
+
+.cardButton:hover .listContainer {
+  opacity: 1;
+  padding: 5%;
+  margin-top: 20px;
+}
+
+.cardButton:hover .titleButton {
+  background-color: #1070cf;
+}
