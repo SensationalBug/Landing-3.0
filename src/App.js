@@ -41,8 +41,8 @@ function App() {
         </div>
         <div className="textos">
           <div className="textosContainer">
-            <h1>SensationalBug</h1>
-            <h2>Hacemos la web perfecta para ti.</h2>
+            <h1>Pedro Luis D L</h1>
+            <h2>Haciendo la web perfecta para ti.</h2>
           </div>
           <div className="btnContainer">
             <Buttons
